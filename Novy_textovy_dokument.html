@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<input type="text" id="name" ></input>
+<button onclick="Delete(name)">Delete</button>
+<button onclick="GetAll()">GetAll()</button>
+<button onclick="Search(name)">Search</button>
+<button onclick="Push()">Push</button>
+<button onclick="edi(name)">Edit</button>
+	
+	<script>
+
+	var arr = [];
+	while(true)
+	{
+		var name=prompt("E","name");
+		if(name==0)
+		{
+			break;
+		}
+
+	arr.push(name);
+	}
+	
+	for(var y=0;y<arr.length;y++)
+	{
+ 		console.log(arr[y]);
+	}
+
+    
+
+	function Delete(name)
+	{
+		var name = document.getElementById('name').value;
+		for(var i=0; i<arr.length;i++)
+		{
+			if(arr[i]==name)
+			{
+				delete arr[i];
+			}
+		}	
+	}
+
+
+
+	function GetAll()
+	{
+		for(var i=0; i<arr.length;i++)
+		{
+			console.log(arr[i]);
+		}
+	}
+
+
+
+	function Search(Name)
+	{
+		var name = document.getElementById('name').value;
+		for(var i=0; i<arr.length;i++)
+		{
+			if(arr[i]==name)
+			{
+				console.log(arr[i]);
+			}
+		}
+	}
+
+	function Push()
+	{
+		var new_name=prompt("New_element");
+		arr.push(new_name);
+	}
+
+	function edi(name){ 
+	var name = document.getElementById('name').value;
+	var gus=arr.indexOf(name); 
+    arr[gus]=prompt("Nove znach"); 
+    }
+ 	</script>
+
+</body>
+<head>
