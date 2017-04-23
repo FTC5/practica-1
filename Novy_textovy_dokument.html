@@ -11,7 +11,7 @@ Name : <input type="text" id="name" >
 <button onclick="Push()">Push</button>
 <button onclick="edi(name)">Edit</button>
 
-<table border="1">
+<table border="6">
 	<tr>
 		<td>id</td>
 		<td>name<td>
@@ -50,6 +50,7 @@ Name : <input type="text" id="name" >
 			if(arr[i]==name)
 			{
 				delete arr[i];
+				arr[i]="";
 			}
 		}	
 	}
@@ -96,6 +97,15 @@ Name : <input type="text" id="name" >
     arr[gus]=prompt("Nove znach"); 
     }
  	</script>
+<p><input type="button" id="clear" value="Очистить" onclick="ochistka()">
+<script>
+var alles_td=document.getElementsByTagName("td");
+function ochistka(){
+    for(i=2;i<alles_td.length;i++){
+        alles_td[i].innerHTML="";
+    }
+}
+</script>
 
 </body>
 </html>
