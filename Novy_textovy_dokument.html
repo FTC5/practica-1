@@ -4,16 +4,29 @@
 
 </head>
 <body>
-<input type="text" id="name" ></input>
+Name : <input type="text" id="name" >
 <button onclick="Delete(name)">Delete</button>
-<button onclick="GetAll()">GetAll()</button>
+<button onclick="Get_All()">GetAll()</button>
 <button onclick="Search(name)">Search</button>
 <button onclick="Push()">Push</button>
 <button onclick="edi(name)">Edit</button>
+
+<table border="1">
+	<tr>
+		<td>id</td>
+		<td>name<td>
+	</tr>
+	
+	<tr>
+		<td id="id"></td>
+		<td id="search_name"></td>
+	</tr>
+</table>
+
 	
 	<script>
-
 	var arr = [];
+	var html;
 	while(true)
 	{
 		var name=prompt("E","name");
@@ -21,7 +34,6 @@
 		{
 			break;
 		}
-
 	arr.push(name);
 	}
 	
@@ -29,9 +41,7 @@
 	{
  		console.log(arr[y]);
 	}
-
     
-
 	function Delete(name)
 	{
 		var name = document.getElementById('name').value;
@@ -43,19 +53,22 @@
 			}
 		}	
 	}
-
-
-
-	function GetAll()
+	function Get_All() 
 	{
-		for(var i=0; i<arr.length;i++)
-		{
-			console.log(arr[i]);
-		}
+	var i=arr.length;
+	elem = document.getElementById('search_name');
+	id= document.getElementById('id')
+    	return function()
+     	{
+        	if ( i-- > 0 ) 
+        	{
+        		console.log(arr[i]);
+                	elem.innerHTML = arr[ i ] + '<br>' + elem.innerHTML;
+                	id.innerHTML = i + '<br>' + id.innerHTML;
+                setTimeout( arguments.callee, 10 );
+			}
+		}();
 	}
-
-
-
 	function Search(Name)
 	{
 		var name = document.getElementById('name').value;
@@ -63,18 +76,21 @@
 		{
 			if(arr[i]==name)
 			{
+				elem = document.getElementById('search_name');
+                id= document.getElementById('id')
 				console.log(arr[i]);
+				id.innerHTML = i + '<br>' + id.innerHTML;
+				elem.innerHTML =  arr[ i ]
 			}
 		}
 	}
-
 	function Push()
 	{
 		var new_name=prompt("New_element");
 		arr.push(new_name);
 	}
-
-	function edi(name){ 
+	function edi(name)
+	{ 
 	var name = document.getElementById('name').value;
 	var gus=arr.indexOf(name); 
     arr[gus]=prompt("Nove znach"); 
@@ -82,4 +98,4 @@
  	</script>
 
 </body>
-</head>
+</html>
