@@ -4,14 +4,23 @@
 
 </head>
 <body>
-Name : <input type="text" id="name" >
-<button onclick="Delete(name)">Delete</button>
-<button onclick="Get_All()">GetAll()</button>
-<button onclick="Search(name)">Search</button>
-<button onclick="Push()">Push</button>
-<button onclick="edi(name)">Edit</button>
-
-<table border="6">
+<table border="1">
+	<tr>
+		<td align="center">
+			 Name : <input type="text" id="name" >
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<button onclick="Delete(name)">Delete</button>
+		<button onclick="Get_All()">GetAll()</button>
+		<button onclick="Search(name)">Search</button>
+		<button onclick="Push()">Push</button>
+		<button onclick="edi(name)">Edit</button>
+		</td>
+	</tr>
+</table>
+<table border="1">
 	<tr>
 		<td>id</td>
 		<td>name<td>
@@ -80,7 +89,7 @@ Name : <input type="text" id="name" >
 				elem = document.getElementById('search_name');
                 id= document.getElementById('id')
 				console.log(arr[i]);
-				id.innerHTML = i + '<br>' + id.innerHTML;
+				id.innerHTML = i ;
 				elem.innerHTML =  arr[ i ]
 			}
 		}
@@ -101,7 +110,7 @@ Name : <input type="text" id="name" >
 <script>
 var alles_td=document.getElementsByTagName("td");
 function ochistka(){
-    for(i=2;i<alles_td.length;i++){
+    for(i=4;i<alles_td.length;i++){
         alles_td[i].innerHTML="";
     }
 }
